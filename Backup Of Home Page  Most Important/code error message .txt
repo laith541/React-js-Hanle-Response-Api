@@ -1,0 +1,16 @@
+{/* ErrorMessage part */}
+   <div id="HiddenErrorDiv" hidden={isVisible2}  >
+     <div className='container ' >
+<div> <img src="https://menafn.com//includes/img/error-logo-left.png"/>  <div className='SorryStyle'>403</div>
+</div>
+
+<div>
+<div class="SorryStyle">Sorry!!</div>
+  <div class="ErrorTextStyle">
+  Error! We're sorry, but the page you were
+looking for doesn't exist.
+</div>
+  </div>
+  </div>
+  </div>
+{/* End  ErrorMessage part */}

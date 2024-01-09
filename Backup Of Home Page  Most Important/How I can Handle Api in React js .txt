@@ -1,0 +1,45 @@
+Example on How Ican catch Api In React js And if User Send Error data 
+
+1-Hidden Some paragraph 
+2-Show Some paragraph 
+
+In This Example user send StoryId If User Request Api Wrong ID => We Handle Response And Show (Error Div )
+----
+
+
+    axios.get(variables.API_URL+ '/external_site/qn_news_story_s_show_story_data' , {
+       
+                    headers:{'Authorization':'bearer ' + jwttoken },
+                    params: {
+                      storyid: storyID,
+                      title: title,
+                      lang: 'en',
+                      social: social
+                    }   
+                })
+                    .then(function (response) {
+                   
+                       console.log('story data');
+                       console.log(response.data );
+                       console.log(response.data.Item1[0].Accepted);
+                       console.log(response.data.Item1[0].newsID);
+                        
+              
+
+setsnewsTitle(response.data.Item1[0].newsTitle);
+setnewsBody(response.data.Item1[0].newsBody)     ;  
+setnewsDate(response.data.Item1[0].newsDate.replace('T',' '))   ;
+setimagePath(response.data.Item1[0].imagePath)   ;
+
+setnews_img_caption(response.data.Item1[0].news_img_caption);
+setproviderLogo(response.data.Item1[0].providerLogo);
+setorg_link(response.data.Item1[0].org_link);
+settit(response.data.Item2.Meta_OG_Title);
+
+  
+             
+              }).catch((err) => {
+                alert('  Please insert A valid id  :' + err.message);
+                setIsVisible(true);
+                setIsVisible2(false);
+              });
